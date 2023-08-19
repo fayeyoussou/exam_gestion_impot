@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+  <h1>Formulaire de création de déclaration</h1>
+  <form th:action="@{/declaration/create}" method="post" th:object="${declarationRequest}">
+    <div class="mb-3">
+      <label for="dateDeclaration" class="form-label">Date de déclaration</label>
+      <input type="date" class="form-control" id="dateDeclaration" th:field="*{dateDeclaration}" required>
+      <span class="validation--error" th:if="${#fields.hasErrors('dateDeclaration')}" th:errors="*{dateDeclaration}">Date Error</span>
+    </div>
+    <div class="mb-3">
+      <label for="montantDeclaration" class="form-label">Montant de déclaration</label>
+      <input type="number" class="form-control" id="montantDeclaration" th:field="*{montantDeclaration}" required>
+      <span class="validation--error" th:if="${#fields.hasErrors('montantDeclaration')}" th:errors="*{montantDeclaration}">Montant Error</span>
+    </div>
+    <div class="mb-3">
+      <label for="idDeclarant" class="form-label">Déclarant existant</label>
+      <select class="form-select" id="idDeclarant" th:field="*{idDeclarant}" required>
+        <option value="-1" >-- Select Declarant --</option>
+        <option th:each="declarant : ${declarants}"
+                th:value="${declarant.id}"
+                th:text="${declarant.raisonSocial}">
+        </option>
+      </select>
+      <span class="validation--error" th:if="${#fields.hasErrors('idDeclarant')}" th:errors="*{idDeclarant}">Déclarant Error</span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+</html>

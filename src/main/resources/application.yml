@@ -1,0 +1,54 @@
+# application.yml
+spring.config.activate.on-profile: dev
+app:
+  layout: "layout"
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/impo_app_test
+    username: root
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/impo_app_dev
+    username: root
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: production
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/impo_app_db
+    username: root
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false

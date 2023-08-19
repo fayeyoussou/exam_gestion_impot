@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<div th:fragment="content">
+  <h1>Liste des déclarations</h1>
+  <a class="btn btn-primary float-end margin-10" th:href="@{/declaration/create}">Créer Déclaration</a>
+
+  <table class="table blue-striped green-striped">
+    <thead>
+    <tr id="thead--row">
+      <th>Raison sociale </th>
+      <th>Date </th>
+      <th>Montant</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="declaration, rowStatus : ${declarations}">
+      <td th:text="${declaration.declarantRaisonSocial}"></td>
+      <td th:text="${#dates.format(declaration.dateDeclaration, 'dd/MM/yyyy')}"></td>
+      <td th:text="${declaration.montantDeclaration}"></td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>

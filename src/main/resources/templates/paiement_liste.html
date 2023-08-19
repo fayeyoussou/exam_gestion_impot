@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<div th:fragment="content">
+  <h1>Liste des paiements</h1>
+  <a class="btn btn-primary float-end margin-10" th:href="@{/paiement/create}">Créer Paiement</a>
+
+  <table class="table blue-striped green-striped">
+    <thead>
+    <tr id="thead--row">
+      <th>Date</th>
+      <th>Montant</th>
+      <th>Déclaration</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="paiement, rowStatus : ${paiements}">
+      <td th:text="${#dates.format(paiement.datePaiement, 'dd/MM/yyyy')}"></td>
+      <td th:text="${paiement.montantPaiement}"></td>
+      <td>
+
+        <a style="margin-left: 20px" th:href="@{/declaration/details/{id}(id=${paiement.declarationId})}"
+           >
+          <i class="material-icons">visibility</i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</html>

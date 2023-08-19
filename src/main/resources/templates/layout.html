@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${title}">Gestion des Impots</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}" />
+  <link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}" />
+  <link rel="stylesheet" th:href="@{/css/material-pink-indigo.css}" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Import Material Design Icons CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Import Material Design Lite JavaScript -->
+
+
+
+
+</head>
+<body >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" th:href="@{/}">    <img src="https://eservices.dgid.sn/FORMULAIRECONTRIBUABLE_WEB/dgid-logo.png" alt="Direction Generale Des Impots et Domaines" class="logo-image"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/declarant}">Declarant</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/declaration}">Declaration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/paiement}">Paiement</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+    <div th:class="content" th:insert="~{${content!=null ? content : 'home'} :: content}">
+
+    </div>
+  </main>
+  <footer>
+    &copy; My Website 2023
+  </footer>
+</body>
+<script defer th:src="@{/js/material.min.js}"></script>
+<script th:src="@{/css/bootstrap/js/bootstrap.js}" crossorigin="anonymous"></script>
+<script th:src="@{/js/jquery.min.js}" ></script>
+<script th:src="@{/js/popper.min.js}" ></script>
+</html>

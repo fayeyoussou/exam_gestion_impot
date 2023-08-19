@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<div th:fragment="content">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <h1>Liste des déclarants</h1>
+    </div>
+    <div class="col-md-6">
+        <input class="form-control me-2" id="search-input" type="search" placeholder="Rechercher" aria-label="Search">
+
+    </div>
+  </div>
+
+  <a class="btn btn-primary float-end" th:href="@{/declarant/create}">Créer Déclarant</a>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Raison sociale</th>
+      <th>Adresse</th>
+      <th>Email</th>
+      <th>Téléphone</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="declarant : ${declarants}">
+      <td th:text="${declarant.raisonSocial}"></td>
+      <td th:text="${declarant.adresse}"></td>
+      <td th:text="${declarant.email}"></td>
+      <td th:text="${declarant.telephone}"></td>
+      <td>
+        <a style="margin-left: 20px" th:href="@{/declaration/declarant/{id}(id=${declarant.id})}">
+          <i class="material-icons">visibility</i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <script async th:src="@{/js/search-script.js}" ></script>
+</div>

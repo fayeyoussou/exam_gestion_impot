@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+    <h1>Formulaire de création de paiement</h1>
+    <form th:action="@{/paiement/create}" method="post" th:object="${paiementRequest}">
+        <div class="mb-3">
+            <label for="datePaiement" class="form-label">Date de paiement</label>
+            <input type="date" class="form-control" id="datePaiement" th:field="*{datePaiement}" required>
+            <span class="validation--error" th:if="${#fields.hasErrors('datePaiement')}" th:errors="*{datePaiement}">Date Error</span>
+        </div>
+        <div class="mb-3">
+            <label for="montantPaiement" class="form-label">Montant de paiement</label>
+            <input type="number" class="form-control" id="montantPaiement" th:field="*{montantPaiement}" required>
+            <span class="validation--error" th:if="${#fields.hasErrors('montantPaiement')}" th:errors="*{montantPaiement}">Montant Error</span>
+        </div>
+        <div class="mb-3">
+            <label for="declarationId" class="form-label">Déclaration associée</label>
+            <select class="form-select" id="declarationId" th:field="*{declarationId}" required>
+                <option value="-1">-- Select Declaration --</option>
+                <option th:each="declaration : ${declarations}"
+                        th:value="${declaration.id}"
+                        th:text="${declaration.id +'-'+ declaration.declarantRaisonSocial} ">
+                </option>
+            </select>
+            <span class="validation--error" th:if="${#fields.hasErrors('declarationId')}" th:errors="*{declarationId}">Déclaration Error</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+</html>

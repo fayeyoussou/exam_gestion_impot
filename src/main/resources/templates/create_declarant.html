@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="content">
+
+    <h1>Formulaire de creation de declarant</h1>
+    <form th:action="@{/declarant/create}" method="post" th:object="${declarantRequest}">
+      <div class="mb-3">
+        <label for="raisonSocial" class="form-label">Raison sociale</label>
+        <input type="text" class="form-control" id="raisonSocial" th:field="*{raisonSocial}" required>
+        <span class="validation--error" th:if="${#fields.hasErrors('raisonSocial')}" th:errors="*{raisonSocial}">Raison Social Error</span>
+      </div>
+      <div class="mb-3">
+        <label for="adresse" class="form-label">Adresse</label>
+        <input type="text" class="form-control" id="adresse" th:field="*{adresse}" required>
+        <span class="validation--error" th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}">Adresse Error</span>
+
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" th:field="*{email}" required>
+        <span class="validation--error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</span>
+
+      </div>
+      <div class="mb-3">
+        <label for="telephone" class="form-label">Téléphone</label>
+        <input type="text" class="form-control" id="telephone" th:field="*{telephone}" required>
+
+        <span class="validation--error" th:if="${#fields.hasErrors('telephone')}" th:errors="*{telephone}">telephone Error</span>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
