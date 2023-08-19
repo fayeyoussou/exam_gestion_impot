@@ -1,7 +1,7 @@
 # application.yml
-spring.config.activate.on-profile: dev
-app:
-  layout: "layout"
+spring:
+  main:
+    web-application-type: none
 ---
 
 spring:
