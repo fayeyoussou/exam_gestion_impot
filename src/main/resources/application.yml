@@ -1,7 +1,5 @@
 # application.yml
-spring:
-  main:
-    web-application-type: none
+
 ---
 
 spring:
@@ -52,3 +50,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: false
+  main:
+    web-application-type: none
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
