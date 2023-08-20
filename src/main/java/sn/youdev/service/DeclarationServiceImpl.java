@@ -1,6 +1,7 @@
 package sn.youdev.service;
 
 import org.springframework.stereotype.Service;
+import sn.youdev.dto.PaiementInfo;
 import sn.youdev.dto.converter.DeclarationConverter;
 import sn.youdev.dto.request.DeclarationRequest;
 import sn.youdev.dto.response.DeclarationResponse;
@@ -9,6 +10,7 @@ import sn.youdev.model.Declaration;
 import sn.youdev.repository.DeclarationRepository;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 public class DeclarationServiceImpl implements DeclarationService {
@@ -47,6 +49,19 @@ public class DeclarationServiceImpl implements DeclarationService {
         Declaration declaration = converter.convert(request);
         return  repo.save(declaration).toResponse();
 
+    }
+
+    @Override
+    public PaiementInfo getPaiementInfo(Long id) {
+        Declaration declaration= repo.findById(id).orElse(null);
+        if(declaration == null) return null;
+        else {
+            AtomicReference<Double> paier = new AtomicReference<>(0d);
+            declaration.getPaiements().forEach(x->{
+                paier.updateAndGet(v -> v + x.getMontantPaiement());
+            });
+            return new PaiementInfo(id,declaration.getDeclarant().getRaisonSocial(),declaration.getMontantDeclaration(), paier.get());
+        }
     }
 
     @Override

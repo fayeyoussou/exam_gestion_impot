@@ -1,6 +1,7 @@
 package sn.youdev.service;
 
 import org.springframework.stereotype.Service;
+import sn.youdev.dto.PaiementInfo;
 import sn.youdev.dto.request.DeclarationRequest;
 import sn.youdev.dto.response.DeclarationResponse;
 import sn.youdev.model.Declarant;
@@ -15,6 +16,6 @@ public interface DeclarationService {
     DeclarationResponse findById(Long id);
     List<DeclarationResponse> liste();
     DeclarationResponse save(DeclarationRequest request);
-
+    PaiementInfo getPaiementInfo(Long id);
     List<DeclarationResponse> listeByDeclarant(Long id);
 }

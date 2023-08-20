@@ -17,13 +17,7 @@
         </div>
         <div class="mb-3">
             <label for="declarationId" class="form-label">Déclaration associée</label>
-            <select class="form-select" id="declarationId" th:field="*{declarationId}" required>
-                <option value="-1">-- Select Declaration --</option>
-                <option th:each="declaration : ${declarations}"
-                        th:value="${declaration.id}"
-                        th:text="${declaration.id +'-'+ declaration.declarantRaisonSocial} ">
-                </option>
-            </select>
+            <input type="text" id="declarationId" th:field="{declarationId}" th:value="{$paiementInfo.id}" readonly="readonly" />
             <span class="validation--error" th:if="${#fields.hasErrors('declarationId')}" th:errors="*{declarationId}">Déclaration Error</span>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

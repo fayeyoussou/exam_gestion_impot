@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import sn.youdev.dto.response.DeclarationResponse;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -20,6 +22,8 @@ public class Declaration {
     private Double montantDeclaration;
     @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Declarant declarant;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "declaration")
+    private List<Paiement> paiements = new ArrayList<>();
     //Declaration(id long, dateDeclaration date, montantDeclaration  double, idDeclarant long)
     public DeclarationResponse toResponse(){
         return new DeclarationResponse(

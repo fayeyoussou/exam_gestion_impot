@@ -42,13 +42,13 @@ public class PaiementController {
         model.addAttribute("declarations",service.listeDeclaration());
         return Constante.LAYOUT;
     }
-    @PostMapping(Constante.CREATE)
-    public String createPaiement(@Valid PaiementRequest request, Errors errors, Model model){
-        if(errors.hasErrors()){
-            return paiementForme(model);
-        }
-        PaiementResponse paiement =  service.save(request);
-        log.info("paiement_added",paiement);
-        return "redirect:/paiement";
-    }
+//    @PostMapping(Constante.CREATE)
+//    public String createPaiement(@Valid PaiementRequest request, Errors errors, Model model){
+//        if(errors.hasErrors()){
+//            return paiementForme(model);
+//        }
+//        PaiementResponse paiement =  service.save(request);
+//        log.info("paiement_added",paiement);
+//        return "redirect:/paiement";
+//    }
 }
