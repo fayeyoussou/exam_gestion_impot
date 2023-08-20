@@ -56,3 +56,6 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
     mode: HTML
+server:
+  servlet:
+    context-path: /impot
