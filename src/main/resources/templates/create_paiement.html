@@ -3,23 +3,29 @@
 
 <div th:fragment="content">
 
-    <h1>Formulaire de création de paiement</h1>
-    <form th:action="@{/paiement/create}" method="post" th:object="${paiementRequest}">
+    <h1>paiement</h1>
+    <div class="mb-3">
+        <label for="apayer" class="form-label">Somme total a payer</label>
+        <input type="text" th:value="${infoPaiement.montantPaiement}" class="form-control" id="apayer"  readonly>
+    </div>
+    <p th:if="${infoPaiement.paier != 0}" >Dont <span  th:text="${infoPaiement.paier}"></span> Frs CFA dejà paie</p>
+
+    <form  method="post" th:object="${paiementRequest}">
         <div class="mb-3">
             <label for="datePaiement" class="form-label">Date de paiement</label>
             <input type="date" class="form-control" id="datePaiement" th:field="*{datePaiement}" required>
             <span class="validation--error" th:if="${#fields.hasErrors('datePaiement')}" th:errors="*{datePaiement}">Date Error</span>
         </div>
+        <input type="hidden" id="declarationId"  th:value="${idDeclaration}" name="declarationId" />
+
+
         <div class="mb-3">
-            <label for="montantPaiement" class="form-label">Montant de paiement</label>
-            <input type="number" class="form-control" id="montantPaiement" th:field="*{montantPaiement}" required>
-            <span class="validation--error" th:if="${#fields.hasErrors('montantPaiement')}" th:errors="*{montantPaiement}">Montant Error</span>
+            <label for="montantPaiement" class="form-label">Montant de paiement max : <span th:text="${infoPaiement.montantPaiement - infoPaiement.paier}"></span></label>
+            <input type="number" th:max="${infoPaiement.montantPaiement - infoPaiement.paier}" class="form-control" id="montantPaiement" name="montantPaiement" required>
+            <span  class="validation--error" th:if="${#fields.hasErrors('montantPaiement')}" th:errors="*{montantPaiement}">Montant Error</span>
         </div>
-        <div class="mb-3">
-            <label for="declarationId" class="form-label">Déclaration associée</label>
-            <input type="text" id="declarationId" th:field="*{declarationId}" th:value="${paiementInfo.id}" readonly="readonly" />
-            <span class="validation--error" th:if="${#fields.hasErrors('declarationId')}" th:errors="*{declarationId}">Déclaration Error</span>
-        </div>
+
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

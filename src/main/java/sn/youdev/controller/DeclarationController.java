@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import sn.youdev.controller.config.Constante;
+import sn.youdev.dto.PaiementInfo;
 import sn.youdev.dto.request.DeclarantRequest;
 import sn.youdev.dto.request.DeclarationRequest;
 import sn.youdev.dto.request.PaiementRequest;
@@ -29,14 +30,7 @@ public class DeclarationController {
         model.addAttribute("declarations",service.liste());
         return Constante.LAYOUT;
     }
-    @GetMapping("/paier/{id}")
-    public String paiementForme(@PathVariable("id") final Long id, Model model){
 
-        model.addAttribute("content","create_paiement");
-        model.addAttribute("infoPaiement",service.getPaiementInfo(id));
-//        model.addAttribute("declarations",service.listeDeclaration());
-        return Constante.LAYOUT;
-    }
     @ModelAttribute(name = "paiementRequest")
     public PaiementRequest paiementRequest(){
         return new PaiementRequest();

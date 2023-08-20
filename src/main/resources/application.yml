@@ -1,4 +1,6 @@
 # application.yml
+server:
+  port: 8094
 spring:
   profiles:
     active: dev

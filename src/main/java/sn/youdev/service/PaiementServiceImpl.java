@@ -1,6 +1,7 @@
 package sn.youdev.service;
 
 import org.springframework.stereotype.Service;
+import sn.youdev.dto.PaiementInfo;
 import sn.youdev.dto.converter.PaiementConverter;
 import sn.youdev.dto.request.PaiementRequest;
 import sn.youdev.dto.response.DeclarationResponse;
@@ -46,5 +47,10 @@ public class PaiementServiceImpl implements PaiementService {
     @Override
     public List<DeclarationResponse> listeDeclaration() {
         return service.liste();
+    }
+
+    @Override
+    public PaiementInfo getPaiementInfo(Long id) {
+        return service.getPaiementInfo(id);
     }
 }

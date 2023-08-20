@@ -21,7 +21,6 @@ public class PaiementRequest implements Serializable {
     @Min(1000)
     @PositiveOrZero
     private double montantPaiement;
-    @Min(1)
-    @Positive
+
     private Long declarationId;
 }

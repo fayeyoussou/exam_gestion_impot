@@ -1,5 +1,6 @@
 package sn.youdev.service;
 
+import sn.youdev.dto.PaiementInfo;
 import sn.youdev.dto.request.PaiementRequest;
 import sn.youdev.dto.response.DeclarationResponse;
 import sn.youdev.dto.response.PaiementResponse;
@@ -14,4 +15,6 @@ public interface PaiementService {
     List<PaiementResponse> liste();
 
     List<DeclarationResponse> listeDeclaration();
+
+    PaiementInfo getPaiementInfo(Long id);
 }
