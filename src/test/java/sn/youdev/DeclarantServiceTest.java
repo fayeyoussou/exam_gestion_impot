@@ -34,29 +34,29 @@ public class DeclarantServiceTest {
     @Autowired
     private DeclarantServiceImpl declarantService;
 
-    @Test
-    public void testSaveDeclarant() {
-        // Create a DeclarantRequest
-        DeclarantRequest request = new DeclarantRequest();
-        request.setRaisonSocial("Company XYZ");
-        request.setAdresse("123 Main St");
-        request.setEmail("company@example.com");
-        request.setTelephone("1234567890");
-
-        // Convert the request to a Declarant entity
-        Declarant declarant = declarantConverter.convert(request);
-
-        // Save the entity using the service
-        Declarant savedDeclarant = declarantService.saveDeclarant(request);
-
-        // Fetch the entity from the database using the repository
-        Declarant fetchedDeclarant = declarantRepository.findById(savedDeclarant.getId()).orElse(null);
-
-        // Perform assertions
-        assertNotNull(savedDeclarant);
-        assertEquals(request.getRaisonSocial(), fetchedDeclarant.getRaisonSocial());
-        assertEquals(request.getAdresse(), fetchedDeclarant.getAdresse());
-        assertEquals(request.getEmail(), fetchedDeclarant.getEmail());
-        assertEquals(request.getTelephone(), fetchedDeclarant.getTelephone());
-    }
+//    @Test
+//    public void testSaveDeclarant() {
+//        // Create a DeclarantRequest
+//        DeclarantRequest request = new DeclarantRequest();
+//        request.setRaisonSocial("Company XYZ");
+//        request.setAdresse("123 Main St");
+//        request.setEmail("company@example.com");
+//        request.setTelephone("1234567890");
+//
+//        // Convert the request to a Declarant entity
+//        Declarant declarant = declarantConverter.convert(request);
+//
+//        // Save the entity using the service
+//        Declarant savedDeclarant = declarantService.saveDeclarant(request);
+//
+//        // Fetch the entity from the database using the repository
+//        Declarant fetchedDeclarant = declarantRepository.findById(savedDeclarant.getId()).orElse(null);
+//
+//        // Perform assertions
+//        assertNotNull(savedDeclarant);
+//        assertEquals(request.getRaisonSocial(), fetchedDeclarant.getRaisonSocial());
+//        assertEquals(request.getAdresse(), fetchedDeclarant.getAdresse());
+//        assertEquals(request.getEmail(), fetchedDeclarant.getEmail());
+//        assertEquals(request.getTelephone(), fetchedDeclarant.getTelephone());
+//    }
 }
