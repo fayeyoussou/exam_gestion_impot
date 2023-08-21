@@ -10,15 +10,19 @@
       <th>Raison sociale </th>
       <th>Date </th>
       <th>Montant</th>
-
+      <th>Restant</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="declaration, rowStatus : ${declarations}">
       <td th:text="${declaration.declarantRaisonSocial}"></td>
       <td th:text="${#dates.format(declaration.dateDeclaration, 'dd/MM/yyyy')}"></td>
-      <td th:text="${declaration.montantDeclaration}"></td>
-
+      <td th:text="${declaration.montantDeclaration + ' Frs CFA'}"></td>
+      <td><p th:if="${declaration.paiementRestant==0}">Paier Totalement</p>
+        <span th:if="${declaration.paiementRestant > 0}"><a style="margin-left: 20px"  th:href="@{/paiement/declaration/paier/{id}(id=${declaration.id})}" th:text="${declaration.paiementRestant + ' Frs CFA' }">
+          <i class="material-icons">visibility</i>
+        </a></span>
+      </td>
     </tr>
     </tbody>
   </table>

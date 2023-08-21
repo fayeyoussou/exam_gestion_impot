@@ -18,7 +18,7 @@
       <td th:text="${paiement.montantPaiement}"></td>
       <td>
 
-        <a style="margin-left: 20px" th:href="@{/declaration/details/{id}(id=${paiement.declarationId})}"
+        <a style="margin-left: 20px" th:href="@{paiement/declaration/{id}(id=${paiement.declarationId})}"
            >
           <i class="material-icons">visibility</i>
         </a>

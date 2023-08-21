@@ -34,14 +34,21 @@ public class PaiementServiceImpl implements PaiementService {
     }
 
     @Override
-    public PaiementResponse save(PaiementRequest request) {
+    public Paiement save(PaiementRequest request) {
         Paiement paiement = converter.convert(request);
-        return repo.save(paiement).toResponse();
+        assert paiement != null;
+        return repo.save(paiement);
     }
 
     @Override
     public List<PaiementResponse> liste() {
         return repo.findAll().stream().map(Paiement::toResponse).toList();
+    }
+
+    @Override
+    public List<PaiementResponse> listePaiementDeclaration(Long id) {
+        return repo.findPaiementsByDeclaration_Id(id).stream().map(Paiement::toResponse).toList();
+
     }
 
     @Override

@@ -11,8 +11,9 @@ import java.util.List;
 public interface PaiementService {
     Paiement find(Long id);
     PaiementResponse findById(Long id);
-    PaiementResponse save(PaiementRequest request);
+    Paiement save(PaiementRequest request);
     List<PaiementResponse> liste();
+    List<PaiementResponse> listePaiementDeclaration(Long id);
 
     List<DeclarationResponse> listeDeclaration();
 

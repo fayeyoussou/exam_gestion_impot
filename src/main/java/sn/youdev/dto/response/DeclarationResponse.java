@@ -14,7 +14,8 @@ public record DeclarationResponse(
         Calendar dateDeclaration,
         Double montantDeclaration,
         Long declarantId,
-        String declarantRaisonSocial
+        String declarantRaisonSocial,
+        Double paiementRestant
 ) implements Serializable {
 
 }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Getter
 @Setter
@@ -26,12 +27,17 @@ public class Declaration {
     private List<Paiement> paiements = new ArrayList<>();
     //Declaration(id long, dateDeclaration date, montantDeclaration  double, idDeclarant long)
     public DeclarationResponse toResponse(){
+        AtomicReference<Double> paiementRes = new AtomicReference<>(montantDeclaration);
+        paiements.forEach(x->{
+            paiementRes.updateAndGet(v -> v - x.getMontantPaiement());
+        });
         return new DeclarationResponse(
                 id,
                 dateDeclaration,
                 montantDeclaration,
                 declarant.getId(),
-                declarant.getRaisonSocial()
+                declarant.getRaisonSocial(),
+                paiementRes.get()
         );
     }
     @Override
