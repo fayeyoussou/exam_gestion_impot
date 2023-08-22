@@ -18,9 +18,12 @@
       <td th:text="${declaration.declarantRaisonSocial}"></td>
       <td th:text="${#dates.format(declaration.dateDeclaration, 'dd/MM/yyyy')}"></td>
       <td th:text="${declaration.montantDeclaration + ' Frs CFA'}"></td>
-      <td><p th:if="${declaration.paiementRestant==0}">Paier Totalement</p>
-        <span th:if="${declaration.paiementRestant > 0}"><a style="margin-left: 20px"  th:href="@{/paiement/declaration/paier/{id}(id=${declaration.id})}" th:text="${declaration.paiementRestant + ' Frs CFA' }">
+      <td ><span th:if="${declaration.paiementRestant==0}">Paier Totalement</span>
+        <span th:if="${declaration.paiementRestant > 0}"><a   th:href="@{/paiement/declaration/paier/{id}(id=${declaration.id})}" th:text="${declaration.paiementRestant + ' Frs CFA' }">
           <i class="material-icons">visibility</i>
+        </a></span> <span style="margin-left: 20px" th:if="${declaration.paiementRestant < declaration.montantDeclaration }">|</span>
+        <span th:if="${declaration.paiementRestant < declaration.montantDeclaration }"><a style="margin-left: 20px"  th:href="@{/paiement/declaration/{id}(id=${declaration.id})}" >
+          Voir payement
         </a></span>
       </td>
     </tr>
