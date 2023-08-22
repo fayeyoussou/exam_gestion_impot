@@ -18,5 +18,33 @@ Dans mon application `application.yml` j'utilise des profils pour adapter les pa
 **Profil `dev`** : pour l'environment de development
 **Profil `test`** : pour les test
 **Profil `production`** : pour le deploiement sur serveur tomcat
+## Implementation : Exemple Declaration
+### entite
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/c17fa375-750d-4671-be5b-3ed1ca989e94)
+### repository
+ ![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/5b981d7d-256c-4082-81b5-7197d57b169c)
+### Service
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/fc5dd8bc-ee56-4167-adcd-aaf3e041235c)
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/60cad64c-5bdb-402c-abed-00c7ac50fa64)
+
+### conversion du DTO request
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/5f7d31cf-e17a-4021-a02b-9556f6ee4542)
+### controller du Declaration
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/ed54480f-37c1-4650-bcc2-1249e80a6d2d)
+### View Creation Declaration
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/aac7df99-76a2-4dac-92de-c927f27e9612)
+### Lister Declaration
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/1c1fd2fb-929a-452e-b66b-5e7abf10a671)
+
+## Interface Graphique
+### Liste Declarant
+
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/784ca192-f241-4a4e-bcf6-c7b1dcc58c4d)
+
+
+
+
+## Integartion Continue
+#
 
 
