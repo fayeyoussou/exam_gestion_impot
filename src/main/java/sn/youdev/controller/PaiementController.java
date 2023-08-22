@@ -9,10 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import sn.youdev.controller.config.Constante;
 import sn.youdev.dto.PaiementInfo;
-import sn.youdev.dto.request.DeclarationRequest;
 import sn.youdev.dto.request.PaiementRequest;
-import sn.youdev.dto.response.DeclarationResponse;
-import sn.youdev.dto.response.PaiementResponse;
 import sn.youdev.model.Paiement;
 import sn.youdev.service.PaiementService;
 
@@ -34,6 +31,7 @@ public class PaiementController {
     @GetMapping("/declaration/{id}")
     public String listerPaiement(Model model,@PathVariable("id") final Long id){
         model.addAttribute("content","paiement_liste");
+        model.addAttribute("infoPaiement",service.getPaiementInfo(id));
         model.addAttribute("paiements",service.listePaiementDeclaration(id));
         return Constante.LAYOUT;
     }

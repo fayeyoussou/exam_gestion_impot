@@ -3,7 +3,7 @@
 
 <div th:fragment="content">
 
-    <h1>paiement</h1>
+    <h1>Paiement declaration No <span th:text="${infoPaiement.idDeclaration}"></span> de <span th:text="${infoPaiement.raisonSocialDeclarant}"></span></h1>
     <div class="mb-3">
         <label for="apayer" class="form-label">Somme total a payer</label>
         <input type="text" th:value="${infoPaiement.montantPaiement}" class="form-control" id="apayer"  readonly>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <div th:fragment="content">
-  <h1>Liste des paiements</h1>
+  <h1>Liste des paiements <span th:if="${infoPaiement !=null}">declaration No <span th:text="${infoPaiement.idDeclaration}"></span> de <span th:text="${infoPaiement.raisonSocialDeclarant}"></span></span></h1>
 
   <table class="table blue-striped green-striped">
     <thead>
