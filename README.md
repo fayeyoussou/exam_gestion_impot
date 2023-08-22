@@ -55,11 +55,20 @@ Dans mon application `application.yml` j'utilise des profils pour adapter les pa
 ### Lister Declaration
 ![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/5b48cd59-f7bb-40fd-b189-fd5532866830)
 ### Paier Declaration
-![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/a7a73bef-30dd-4b08-af37-a58fc0f2579b)
-
-
-
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/2083d701-82d9-4aed-98d6-3cb8631e9e26)
+### Liste des Paiement
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/70f5d8c6-70be-4663-9862-a4b9d0a7b619)
 ## Integartion Continue
 ### Configuration maven pour nexus
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/2259a877-7df9-4c2b-84d0-ca79a4410adb)
+### Liste des releases du projet dans maven
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/52f09a32-2537-46f6-b8ec-9d34d3dd0e3a)
+### Configuration Jenkins pour le projet
+#### Auto Deployement avec github hook
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/fbfbb6fb-b079-4b0e-b10b-6933c681df3c)
+#### Script du pipeline
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/e61b89c7-8c99-480a-a698-b88e76e47b6b)
+#### Liste des differents deploiement
+
 
 
