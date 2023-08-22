@@ -40,3 +40,13 @@
 
 ---
 **Remarque** : Assurez-vous de vous référer à la documentation officielle de chaque dépendance pour des instructions détaillées sur son utilisation et les mises à jour.
+## Configuration
+
+
+Dans mon application `application.yml` j'utilise des profils pour adapter les paramètres en fonction du contexte. Voici une description des profils et de leurs configurations :
+
+### Profil `dev` pour l'environment de development
+### Profil `test` pour les test
+### Profil `production` pour le deploiement sur serveur tomcat
+
+
