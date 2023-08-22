@@ -26,6 +26,13 @@ Dans mon application `application.yml` j'utilise des profils pour adapter les pa
 ### Service
 ![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/fc5dd8bc-ee56-4167-adcd-aaf3e041235c)
 ![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/60cad64c-5bdb-402c-abed-00c7ac50fa64)
+### Creation d'une validation de telephone format Senegal
+
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/1d4d54e7-21e3-4020-a7d7-e74ded78a8ad)
+
+<br>
+
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/6c92bbd3-717b-4d9d-a890-64736fdd7cea)
 
 ### conversion du DTO request
 ![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/5f7d31cf-e17a-4021-a02b-9556f6ee4542)
@@ -41,10 +48,18 @@ Dans mon application `application.yml` j'utilise des profils pour adapter les pa
 
 ![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/784ca192-f241-4a4e-bcf6-c7b1dcc58c4d)
 
+**NB  :** La liste des declarants peut etre filtre et on peut cliquer voir pour voir les declaration du declarant
+
+### Creer Declarant
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/d2937f00-fb66-4414-b0ac-8a3d354feb4b)
+### Lister Declaration
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/5b48cd59-f7bb-40fd-b189-fd5532866830)
+### Paier Declaration
+![image](https://github.com/fayeyoussou/exam_gestion_impot/assets/52853193/a7a73bef-30dd-4b08-af37-a58fc0f2579b)
 
 
 
 ## Integartion Continue
-#
+### Configuration maven pour nexus
 
 
